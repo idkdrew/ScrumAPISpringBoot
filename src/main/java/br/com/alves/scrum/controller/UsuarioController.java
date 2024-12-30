@@ -28,7 +28,7 @@ public class UsuarioController {
     public ResponseEntity<Usuario> save(@RequestBody Usuario usuario) {
         return ResponseEntity.ok(usuarioService.save(usuario));
     }
-
+ 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable int id) {
         usuarioService.delete(id);

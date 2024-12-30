@@ -3,23 +3,25 @@ package br.com.alves.scrum.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table (name = "tarefa")
 public class Tarefa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
     private String descricao;
-    private String status;
+    private int status;
+    @Column(name = "id_projeto")
     private int idProjeto;
-    private String prioridade;
+    private int prioridade;
 
     public Tarefa() {
         this.setId(0);
         this.setNome("");
         this.setDescricao("");
-        this.setStatus("");
+        this.setStatus(0);
         this.setIdProjeto(0);
-        this.setPrioridade("");
+        this.setPrioridade(0);
     }
 
     public int getId() {
@@ -46,11 +48,11 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -62,11 +64,12 @@ public class Tarefa {
         this.idProjeto = idProjeto;
     }
 
-    public String getPrioridade() {
+    public int getPrioridade() {
         return prioridade;
     }
 
-    public void setPrioridade(String prioridade) {
+    public void setPrioridade(int prioridade) {
         this.prioridade = prioridade;
     }
+
 }

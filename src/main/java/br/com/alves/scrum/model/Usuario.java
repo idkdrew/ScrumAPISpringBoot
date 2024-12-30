@@ -12,7 +12,7 @@ public class Usuario {
     private String senha;
     private String nome;
     private int permissao;
-    private boolean ativo;
+    private int ativo;
 
     public Usuario() {
         this.id = 0;
@@ -20,7 +20,7 @@ public class Usuario {
         this.senha = "";
         this.nome = "";
         this.permissao = 0;
-        this.ativo = false;
+        this.ativo = 0;
     }
 
     public int getId() {
@@ -63,11 +63,11 @@ public class Usuario {
         this.permissao = permissao;
     }
 
-    public boolean isAtivo() {
+    public int getAtivo() {
         return ativo;
     }
 
-    public void setAtivo(boolean ativo) {
+    public void setAtivo(int ativo) {
         this.ativo = ativo;
     }
 }
